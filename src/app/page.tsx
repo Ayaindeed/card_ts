@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { FaHeart, FaBook, FaMusic, FaBeer, FaGlasses, FaFutbol, FaPaw, FaWineGlass, FaCocktail, FaPenNib, FaGlobe, FaArrowRight, FaMapMarkedAlt, FaBreadSlice, FaLock, FaLockOpen } from "react-icons/fa";
+import { FaHeart, FaBook, FaMusic, FaFutbol, FaPaw, FaWineGlass, FaCocktail, FaPenNib, FaArrowRight, FaLock, FaLockOpen } from "react-icons/fa";
 import { GiPolarBear, GiMagnifyingGlass, GiFootprint, GiPathDistance, GiCakeSlice } from "react-icons/gi";
 import { MdSchool } from "react-icons/md";
 
