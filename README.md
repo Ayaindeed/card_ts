@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Birthday Gift Card Web App
+
+A modern, open-source birthday gift card web app built with Next.js, TypeScript, and Tailwind CSS. Features storytelling sections, blue aesthetic, and personalized content for a Leo physicist in China.
+
+## Features
+
+- Storytelling flow with images, text, and animations
+- Blue-themed, modern design
+- Stickers and assets for interests: Leo, China, PhD, physics, beer/wine, myopia, Ben Howard, French, books
+- Easy to customize and deploy
 
 ## Getting Started
 
@@ -34,3 +43,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## License
+
+Open source under the MIT License.
