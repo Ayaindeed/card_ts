@@ -366,21 +366,22 @@ export default function Home() {
               <FaHeart className="text-pink-400 animate-heart-beat animation-delay-800" size={24} />
             </div>
           </div>
+          
+          {/* CHINESE LETTER BUTTON - Only shows with reminder */}
+          <div className="w-full flex justify-center my-10">
+            <button
+              onClick={showChineseLetterCard}
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-10 py-4 rounded-full shadow-xl text-lg font-bold hover:scale-105 transition-all duration-300 flex items-center gap-3"
+              style={{boxShadow: '0 10px 25px rgba(254, 202, 87, 0.5)'}}
+            >
+              <span className="text-2xl">📜</span>
+              One last thing...
+              <FaArrowRight className="ml-2" />
+            </button>
+          </div>
         </div>
       )}
 
-      {/* STANDALONE CHINESE LETTER BUTTON */}
-      <div className="w-full flex justify-center my-10">
-        <button
-          onClick={showChineseLetterCard}
-          className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-10 py-4 rounded-full shadow-xl text-lg font-bold hover:scale-105 transition-all duration-300 flex items-center gap-3"
-          style={{boxShadow: '0 10px 25px rgba(254, 202, 87, 0.5)'}}
-        >
-          <span className="text-2xl">📜</span>
-          One last thing...
-          <FaArrowRight className="ml-2" />
-        </button>
-      </div>
 
       {/* Chinese Letter Popup */}
       {showChineseLetter && (
