@@ -69,7 +69,7 @@ export default function AccessGate({ children }: AccessGateProps) {
         </form>
         
         <div className="mt-6 text-blue-500 text-sm">
-          <p>Easiest number and it's just one or maybe two :p?</p>
+          <p>Easiest number and it&apos;s just one or maybe two :p?</p>
         </div>
       </div>
     </div>
