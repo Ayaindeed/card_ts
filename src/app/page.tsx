@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { FaHeart, FaBook, FaMusic, FaFutbol, FaPaw, FaWineGlass, FaCocktail, FaPenNib, FaArrowRight, FaLock, FaLockOpen } from "react-icons/fa";
+import { FaHeart, FaBook, FaMusic, FaFutbol, FaCocktail, FaPenNib, FaArrowRight, FaLock, FaLockOpen } from "react-icons/fa";
 import { GiPolarBear, GiMagnifyingGlass, GiFootprint, GiPathDistance, GiCakeSlice } from "react-icons/gi";
 import { MdSchool } from "react-icons/md";
 
@@ -355,7 +355,7 @@ export default function Home() {
             </h3>
             
             <p className="text-pink-800 text-xl leading-relaxed font-medium italic px-4">
-              "Tout va s'arranger, c'est faux, je sais qu'tu sais"
+            &ldquo;Tout va s&rsquo;arranger, c&rsquo;est faux, je sais qu&rsquo;tu sais&rdquo;
             </p>
             
             <div className="flex justify-center space-x-3 mt-8">
