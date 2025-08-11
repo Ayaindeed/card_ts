@@ -444,7 +444,7 @@ export default function Home() {
         )}
 
         <footer className="mt-16 text-blue-100 text-lg flex items-center gap-2 text-center px-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.3)'}}>
-          From A. | Made with <FaHeart className="text-pink-400 animate-heart-beat" /> for Senyor | Open Source Birthday Card ✨
+          From A. | Made with <FaHeart className="text-pink-400 animate-heart-beat" /> for MRM | Open Source Birthday Card ✨
         </footer>
         <style jsx>{`
           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@400;700&display=swap');
