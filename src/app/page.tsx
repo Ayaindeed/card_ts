@@ -69,7 +69,7 @@ const sections = [
     description: "Nerdy Stuff",
     sticker: "/french.png",
     icon: FaPenNib,
-    backMessage: "That penguin-diagram tattoo is going to be perfect! Just like how penguins see the world differently and make it more interesting, your unique perspective makes physics beautiful. Can't wait to see this nerdy art on your skin! 🐧⚛️"
+    backMessage: "That penguin-diagram tattoo is going to be perfect! Just like how penguins see the world differently and make it more interesting, your unique perspective (autism side) makes physics beautiful. Can't wait to see this nerdy art on your skin! 🐧⚛️"
   },
   {
     title: "FC Barcelona",
@@ -126,6 +126,7 @@ export default function Home() {
   const [showReminder, setShowReminder] = useState(false);
   const [unlockedCards, setUnlockedCards] = useState(Array(sections.length).fill(false));
   const [showChineseLetter, setShowChineseLetter] = useState(false);
+  const [showKisses, setShowKisses] = useState(false);
   const handleBlowOut = () => {
     setCandlesLit(false);
     setTimeout(() => setShowCards(true), 1200);
@@ -385,110 +386,171 @@ export default function Home() {
         )}
 
 
-        {/* Chinese Letter Popup */}
-        {showChineseLetter && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
-            <div className="relative max-w-lg w-full mx-4">
-              {/* Vintage Letter Background */}
-              <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-100 rounded-3xl shadow-2xl border-8 border-amber-200 p-8 relative overflow-hidden">
-                {/* Vintage paper texture overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-amber-100/30 to-amber-200/20 pointer-events-none"></div>
-                
-                {/* Decorative vintage corners */}
-                <div className="absolute top-4 left-4 w-6 h-6 border-l-4 border-t-4 border-amber-400 rounded-tl-lg"></div>
-                <div className="absolute top-4 right-4 w-6 h-6 border-r-4 border-t-4 border-amber-400 rounded-tr-lg"></div>
-                <div className="absolute bottom-4 left-4 w-6 h-6 border-l-4 border-b-4 border-amber-400 rounded-bl-lg"></div>
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-r-4 border-b-4 border-amber-400 rounded-br-lg"></div>
-                
-                <div className="relative z-10 text-center space-y-6">
-                  {/* Chinese Happy Birthday */}
-                  <div className="space-y-4">
-                    <div className="text-6xl font-bold text-amber-800 leading-tight" style={{fontFamily: "'Noto Serif SC', serif"}}>
-                      生日快乐
-                    </div>
-                    <div className="text-2xl text-amber-700 font-medium">
-                      Shēngrì kuàilè
-                    </div>
-                    <div className="text-lg text-amber-600 italic">
-                      Mèng Ruì Dà!
-                    </div>
-                  </div>
-                  
-                  {/* Personal message */}
-                  <div className="bg-amber-100/80 backdrop-blur-sm rounded-2xl p-4 border-2 border-amber-300">
-                    <p className="text-amber-800 text-base leading-relaxed font-medium">
-                      520 
-                    </p>
-                  </div>
-                  
-                  {/* Decorative elements */}
-                  <div className="flex justify-center space-x-4">
-                    <span className="text-3xl">🐉</span>
-                    <span className="text-3xl">🎊</span>
-                    <span className="text-3xl">💋</span>
-                    <span className="text-3xl">🎂</span>
-
-                  </div>
-                  
-                  {/* Close button */}
-                  <button
-                    onClick={() => setShowChineseLetter(false)}
-                    className="mt-6 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105 font-semibold"
-                  >
-                    Kisses! -A ✨
-                  </button>
-                </div>
+{/* Chinese Letter Popup */}
+{showChineseLetter && (
+  <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 animate-fade-in">
+    <div className="relative max-w-lg w-full mx-4">
+      {/* Vintage Letter Background */}
+      <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-100 rounded-3xl shadow-2xl border-8 border-amber-200 p-8 relative overflow-hidden">
+        {/* Vintage paper texture overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-amber-100/30 to-amber-200/20 pointer-events-none"></div>
+        
+        {/* Decorative vintage corners */}
+        <div className="absolute top-4 left-4 w-6 h-6 border-l-4 border-t-4 border-amber-400 rounded-tl-lg"></div>
+        <div className="absolute top-4 right-4 w-6 h-6 border-r-4 border-t-4 border-amber-400 rounded-tr-lg"></div>
+        <div className="absolute bottom-4 left-4 w-6 h-6 border-l-4 border-b-4 border-amber-400 rounded-bl-lg"></div>
+        <div className="absolute bottom-4 right-4 w-6 h-6 border-r-4 border-b-4 border-amber-400 rounded-br-lg"></div>
+        
+        {/* Floating Kisses Animation */}
+        {showKisses && (
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute animate-float-kiss text-pink-500"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.2}s`,
+                  fontSize: `${20 + Math.random() * 20}px`
+                }}
+              >
+                💋
               </div>
-            </div>
+            ))}
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={`heart-${i}`}
+                className="absolute animate-float-kiss text-red-400"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.3 + 0.5}s`,
+                  fontSize: `${15 + Math.random() * 15}px`
+                }}
+              >
+                ❤️
+              </div>
+            ))}
           </div>
         )}
+        
+        <div className="relative z-10 text-center space-y-6">
+          {/* Chinese Happy Birthday */}
+          <div className="space-y-4">
+            <div className="text-6xl font-bold text-amber-800 leading-tight" style={{fontFamily: "'Noto Serif SC', serif"}}>
+              生日快乐
+            </div>
+            <div className="text-2xl text-amber-700 font-medium">
+              Shēngrì kuàilè
+            </div>
+            <div className="text-lg text-amber-600 italic">
+              Mèng Ruì Dà!
+            </div>
+          </div>
+          
+          {/* Personal message */}
+          <div className="bg-amber-100/80 backdrop-blur-sm rounded-2xl p-4 border-2 border-amber-300">
+            <p className="text-amber-800 text-base leading-relaxed font-medium">
+              520 
+            </p>
+          </div>
+          
+          {/* Decorative elements */}
+          <div className="flex justify-center space-x-4">
+            <span className="text-3xl">🐉</span>
+            <span className="text-3xl">🎊</span>
+            <span className="text-3xl">💋</span>
+            <span className="text-3xl">🎂</span>
+          </div>
+          
+          {/* Enhanced Close/Kisses button */}
+          <div className="space-y-3">
+            {!showKisses ? (
+              <button
+                onClick={() => setShowKisses(true)}
+                className="bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105 font-semibold text-lg flex items-center gap-2 mx-auto"
+              >
+                💋 Send Kisses! 💋
+              </button>
+            ) : (
+              <button
+                onClick={() => setShowChineseLetter(false)}
+                className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-6 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105 font-semibold"
+              >
+                Kisses! -A ✨
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
         <footer className="mt-16 text-blue-100 text-lg flex items-center gap-2 text-center px-4" style={{textShadow: '0 2px 8px rgba(0,0,0,0.3)'}}>
-          From A. | Made with <FaHeart className="text-pink-400 animate-heart-beat" /> for Senyor | Open Source Birthday Card ✨
+          From A. | Made with <FaHeart className="text-pink-400 animate-heart-beat" /> for MRM | Open Source Birthday Card ✨
         </footer>
-        <style jsx>{`
-          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@400;700&display=swap');
-          
-          @keyframes candle-flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-          }
-          .animate-candle-flicker {
-            animation: candle-flicker 1s infinite;
-          }
-          @keyframes heart-beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-          }
-          .animate-heart-beat {
-            animation: heart-beat 1s infinite;
-          }
-          .animation-delay-200 {
-            animation-delay: 0.2s;
-          }
-          .animation-delay-400 {
-            animation-delay: 0.4s;
-          }
-          .animation-delay-600 {
-            animation-delay: 0.6s;
-          }
-          .animation-delay-800 {
-            animation-delay: 0.8s;
-          }
-          .animate-fade-in {
-            animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) both;
-          }
-          @keyframes fade-in {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          .perspective {
-            perspective: 1200px;
-          }
-          .shadow-3xl {
-            box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
-          }
-        `}</style>
+<style jsx>{`
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@400;700&display=swap');
+  
+  @keyframes candle-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  .animate-candle-flicker {
+    animation: candle-flicker 1s infinite;
+  }
+  @keyframes heart-beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+  .animate-heart-beat {
+    animation: heart-beat 1s infinite;
+  }
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+  .animate-fade-in {
+    animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) both;
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float-kiss {
+    0% { 
+      opacity: 0; 
+      transform: translateY(0) rotate(0deg) scale(0.5); 
+    }
+    20% { 
+      opacity: 1; 
+      transform: translateY(-20px) rotate(10deg) scale(1); 
+    }
+    100% { 
+      opacity: 0; 
+      transform: translateY(-100px) rotate(360deg) scale(0.3); 
+    }
+  }
+  .animate-float-kiss {
+    animation: float-kiss 3s ease-out forwards;
+  }
+  .perspective {
+    perspective: 1200px;
+  }
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+`}</style>
       </div>
     </AccessGate>
   );
