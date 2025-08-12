@@ -105,7 +105,7 @@ const sections = [
     description: "Miles apart but hearts connected across continents.",
     sticker: "/distance.png",
     icon: GiPathDistance,
-    backMessage: "9,850 km kilometers separate Fez from Beijing, but friendship knows no distance. Every mile between us makes our bond stronger!",
+    backMessage: "9,838.7 kilometers (6,113.5 miles) separate Fez from Beijing, but friendship knows no distance. Every mile between us makes our bond stronger!",
     isDistance: true
   },
   {
