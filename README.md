@@ -2,13 +2,6 @@
 
 A modern, open-source birthday gift card web app built with Next.js, TypeScript, and Tailwind CSS.
 
-## Features
-
-- Storytelling flow with images, text, and animations
-- Blue-themed, modern design
-- Stickers and assets for interests: Leo, China, PhD, physics, beer/wine, myopia, Ben Howard, French, books
-- Easy to customize and deploy
-
 ## Getting Started
 
 First, run the development server:
